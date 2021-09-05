@@ -23,7 +23,6 @@ int main()
         }
     }
     int p=a[0];
-
     for(j=0;j<k-1;j++)
     {  
          p=a[0];
