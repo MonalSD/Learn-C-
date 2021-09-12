@@ -37,4 +37,5 @@ int main()
         }
     }
     cout<<l2;
+return 0;
 }

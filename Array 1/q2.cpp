@@ -43,6 +43,4 @@ int main()
     }
     cout<<l3;
 return 0;
-
-
 }
