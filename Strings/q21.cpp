@@ -8,17 +8,29 @@ int main()
     string str;
     cout<<"Enter string: ";
     getline(cin,str);
-    int len=0;
-    while(str[len]!='\0')
+    int len=str.length();
+    for(int i=0;i<len;i++)
     {
-        len++;
+        int count=0;
+        for(int j=0;j<len;j++)
+        {
+            if(str[i]==str[j])
+            {
+                count++;
+            }
+        }
+        int flag=1;
+        for(int j=0;j<i;j++)
+        {
+            if(str[i]==str[j])
+            {
+                flag=0;
+            }
+        }
+        if(count>1 && flag)
+        {
+            cout<<endl<<"character "<<str[i]<<" occurs "<<count<<"times";
+        }
     }
-    int a[100]={0},i;
-    for(i=0;i<len;i++)
-    {
-        if(str[i]==' ')
-        continue;
-        a[str[i]]++;
-    }
-    cout<<;
+return 0;
 }

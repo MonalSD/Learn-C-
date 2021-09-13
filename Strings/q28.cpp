@@ -5,43 +5,49 @@ using namespace std;
 
 int main()
 {
-    string str1,str2;
+    char str1[100],str2[100];
     cout<<"Enter String1:";
-    getline(cin,str1);
+    gets(str1);
     cout<<"Enter String2:";
-    getline(cin,str2);
-    int len1=0,len2=0;
-    while(str1[len1]!='\0')
+    gets(str2);
+    if(strlen(str1) == strlen(str2))
     {
-        len1++;
-    }
-    while(str2[len2]!='\0')
-    {
-        len2++;
-    }
-    int i=0,j=0,count=0;
-
-    if(len1!=len2)
-    {
-        cout<<"Strings not equal.";
-    } 
-    else
-    {
-        
-        for(i=0;i<len1;i++)
+        int flag=1;
+        for(int i=0;i<strlen(str1);i++)
         {
-            for(int j=0;j<len2;j++)
+            int count1=0;
+            for(int j=0;j<strlen(str1);j++)
+            {
+                if(str1[i]==str1[j])
+                {
+                    count1++;
+                }
+            }
+             int count2=0;
+            for(int j=0;j<strlen(str1);j++)
             {
                 if(str1[i]==str2[j])
-                count=1;
-            }    
-
+                {
+                    count2++;
+                }
+            }
+            if(count1!=count2)
+            {
+                flag=0;
+                cout<<"Not anagram.";
+                break;
+            }
         }
+        if(flag)
+        {
+            cout<<"Anagram"<<endl;
+        }
+
     }
-    if(count==1)
-    cout<<"Strings character are the same.";
     else
-    cout<<"Strings character are not the same.";
+    {
+        cout<<"Not Anagrams.";
+    }
 
 return 0;
 }
